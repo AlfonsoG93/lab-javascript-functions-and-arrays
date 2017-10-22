@@ -92,17 +92,10 @@ console.log(averageLength);
 
 // Unique Arrays
 function uniquifyArray (array) {
-  var temp =[];
-    for (var i = 0; i < array.length; i++){
-        temp[array[i]] = true;
-    }
-    console.log(temp);
-    var uarray = [];
-    for (var uniqE in temp){
-        uarray.push(uniqE);
-      }
-    return uarray;
-
+  var unique = array.filter(function(elem, index, self) {
+  return index == self.indexOf(elem);
+});
+return unique;
 }
 
 var words = [
